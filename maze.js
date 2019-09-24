@@ -15,4 +15,17 @@ const map = [
     "W       W       W   W",
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
-console.log(map[0][1]);
+const gameContainer = document.querySelector('.gameContainer');
+console.log(map[0]);
+console.log(map.length);
+
+function createMaze(){
+    for (let i = 0; i < map.length; i++){
+        let createMazeDiv = document.createElement('div');
+        createMazeDiv.className ="mazeDiv";
+        // let textnode = document.createTextNode();
+        // createMazeDiv.appendChild(textnode);
+        gameContainer.appendChild(createMazeDiv)
+    }
+}
+createMaze()
