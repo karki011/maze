@@ -7,14 +7,43 @@ header{
     text-align: center;
 }
 .gameContainer{
-    display: grid;
+    width: 700px;
+    height: 500px;
+    padding: 20px;
+}
+.row {
+    display: flex;
     justify-content: center;
+    flex-direction: row;
+}
 
+.cell {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+.img{
+    background-image: url('./image.png');
+    background-repeat: no-repeat;
+    height: 200px;
+    background-size: contain 
 
 }
-.mazeDiv{
-    height: 40px;
-    width: 90vh;
-    border: 2px solid red;
 
+[data-type="W"]{
+	background-color: #044D9E;
 }
+[data-type=" "]{
+	background-color: transparent;
+}
+[data-type="S"]{
+	position: relative;
+	background-color: red;
+}
+
+
+[data-type="F"]{
+	background-color: blue;
+}
+
