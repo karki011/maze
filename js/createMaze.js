@@ -1,3 +1,4 @@
+"use strict"
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
