@@ -28,6 +28,7 @@ const playerLocation = {
 }
 
 function createMaze(map) {
+    document.querySelector(".gameOver").style.display = "none";
     for (let rowIndex = 0; rowIndex < map.length; rowIndex++) {
         const rowModel = map[rowIndex];
         const rowView = document.createElement('div');

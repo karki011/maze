@@ -26,8 +26,11 @@ function movePlayer(event) {
 
 function win(currColumn, currRow) {
     if (currColumn + currRow === 27) {
-        alert('jk');
+        document.querySelector(".gameOver").style.display = "block";
+        document.getElementById('text').innerHTML = "You slove the maze!" + "</br>"+
+        "<button id='reset' onClick='document.location.reload(true)'>Play again</button>";;
     }
+
 }
 
 function moveRight(event, destination, currRow, currColumn, player) {
