@@ -8,28 +8,34 @@ function moveToNextCell(player, destination) {
 
 function movePlayer(event) {
     let player = document.querySelector('[data-type="S"]');
-    // console.log('player:', player);
+    console.log('player:', player);
     let currColumn = Number(player.dataset.cell);
-    // console.log('currColumn:', currColumn)
+    console.log('currColumn:', currColumn)
     let currRow = Number(player.dataset.row);
-    // console.log('currRow:', currRow)
+    console.log('currRow:', currRow)
     let destination;
-    
+
     destination = moveRight(event, destination, currRow, currColumn, player);
     destination = moveLeft(event, destination, currRow, currColumn, player);
     destination = moveUp(event, destination, currRow, currColumn, player);
     destination = moveDown(event, destination, currRow, currColumn, player);
 
 
+    win(currColumn, currRow);
+}
+
+function win(currColumn, currRow) {
+    if (currColumn + currRow === 27) {
+        alert('jk');
+    }
 }
 
 function moveRight(event, destination, currRow, currColumn, player) {
     if (gameActive) {
         if (event.key === 'ArrowRight') {
             destination = document.getElementById(currRow + "-" + (currColumn + 1));
-            console.log('destination:', destination);
+            // console.log('destination:', destination);
             if (destination.dataset.type !== "W") {
-                console.log("NON");
                 moveToNextCell(player, destination);
                 playerLocation.cell++;
             }
@@ -37,13 +43,12 @@ function moveRight(event, destination, currRow, currColumn, player) {
     }
     return destination;
 }
+
 function moveLeft(event, destination, currRow, currColumn, player) {
     if (gameActive) {
         if (event.key === 'ArrowLeft') {
             destination = document.getElementById(currRow + "-" + (currColumn - 1));
-            console.log('destination:', destination);
             if (destination.dataset.type !== "W") {
-                console.log("NON");
                 moveToNextCell(player, destination);
                 playerLocation.cell--;
             }
@@ -51,10 +56,11 @@ function moveLeft(event, destination, currRow, currColumn, player) {
     }
     return destination;
 }
+
 function moveUp(event, destination, currRow, currColumn, player) {
     if (gameActive) {
         if (event.key === 'ArrowUp') {
-            destination = document.getElementById(currRow -1+ "-" + (currColumn));
+            destination = document.getElementById(currRow - 1 + "-" + (currColumn));
             if (destination.dataset.type !== "W") {
                 moveToNextCell(player, destination);
                 playerLocation.cell--;
@@ -63,10 +69,11 @@ function moveUp(event, destination, currRow, currColumn, player) {
     }
     return destination;
 }
+
 function moveDown(event, destination, currRow, currColumn, player) {
     if (gameActive) {
         if (event.key === 'ArrowDown') {
-            destination = document.getElementById(currRow +1+ "-" + (currColumn));
+            destination = document.getElementById(currRow + 1 + "-" + (currColumn));
             if (destination.dataset.type !== "W") {
                 moveToNextCell(player, destination);
                 playerLocation.cell--;
@@ -74,4 +81,10 @@ function moveDown(event, destination, currRow, currColumn, player) {
         }
     }
     return destination;
+}
+
+function winCheck() {
+    if (playerLocation.cell === 20) {
+        alert('jk')
+    }
 }
