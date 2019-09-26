@@ -15,16 +15,16 @@ const map = [
     "W       W       W   W",
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
-const playerLocation = {
-    row: 0,
-    cell: 0,
-}
+
 
 let gameActive = true;
 const gameContainer = document.querySelector('.gameContainer');
 // console.log(map[0].length); //colum
 // console.log(map.length); //row
-
+const playerLocation = {
+    row: 0,
+    cell: 0,
+}
 
 function createMaze(map) {
     for (let rowIndex = 0; rowIndex < map.length; rowIndex++) {
@@ -37,26 +37,18 @@ function createMaze(map) {
 
         for (let columnIndex = 0; columnIndex < map[rowIndex].length; columnIndex++) {
             let tempMap = map[rowIndex][columnIndex]
+            // console.log('tempMap:', tempMap)
             const cell = document.createElement('div');
-            cell.classList.add('cell');
+            cell.classList.add("cell");
+            // cell.className = 'cell '+tempMap;
             cell.dataset.type = tempMap;
+            cell.id = rowIndex + "-" + columnIndex;;
             cell.dataset.row = rowIndex;
             cell.dataset.cell = columnIndex;
-            
+
             rowView.appendChild(cell);
         }
     }
 }
 createMaze(map)
-document.addEventListener('keydown', movePlayer);
 
-function movePlayer(event) {
-    let player = document.querySelector('[data-type="S"]');
-    console.log('player:', player);
-    let currColumn = Number(player.dataset.cell);
-    console.log('currColumn:', currColumn)
-    let currRow = Number(player.dataset.row);
-    console.log('currRow:', currRow)
-
-
-}

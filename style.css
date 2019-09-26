@@ -10,6 +10,8 @@ header{
     width: 700px;
     height: 500px;
     padding: 20px;
+    margin: 0 auto;
+
 }
 .row {
     display: flex;
@@ -45,16 +47,19 @@ header{
 	background-color: rgb(255, 0, 0);
 }
 
-.W {
-    background-color: black;
+/* .W {
+    background-color: #044D9E;
 }
-.F {
+.empty{
+	background-color: ;
+}
+.E {
     background-color: aliceblue;
 }
 
 .S {
-    background-color: red;
+	background-color: rgb(21, 255, 0);
 }
 .E {
     background-color: darkmagenta;
-}
+} */
