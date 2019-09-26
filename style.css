@@ -21,7 +21,7 @@ header{
     display: inline-block;
     height: 30px;
     width: 30px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .img{
     background-image: url('./image.png');
@@ -39,11 +39,22 @@ header{
 }
 [data-type="S"]{
 	position: relative;
-	background-color: red;
+	background-color: rgb(21, 255, 0);
 }
-
-
 [data-type="F"]{
-	background-color: blue;
+	background-color: rgb(255, 0, 0);
 }
 
+.W {
+    background-color: black;
+}
+.F {
+    background-color: aliceblue;
+}
+
+.S {
+    background-color: red;
+}
+.E {
+    background-color: darkmagenta;
+}
